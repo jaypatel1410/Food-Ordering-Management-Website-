@@ -1,0 +1,225 @@
+<!-- 
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("payment option background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.upi-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 10px;
+		}
+		input[type=text], input[type=password] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 10px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		button {
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+			transition: background-color 0.3s ease;
+		}
+		button:hover {
+			background-color: #3E8E41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="upi-form">
+			<label for="upi-id">UPI ID:</label>
+			<input type="text" id="upi-id" name="upi-id" placeholder="Enter your UPI ID">
+			<label for="amount">Amount:</label>
+			<input type="text" id="amount" name="amount" placeholder="Enter the amount">
+			<button onclick="submitForm()">Submit</button>
+		</div>
+	</div>
+	<script>
+		function submitForm() {
+			let upiId = document.getElementById("upi-id").value;
+			let amount = document.getElementById("amount").value;
+			if (upiId.trim() === "") {
+				alert("Please enter your UPI ID");
+				return;
+			}
+			if (isNaN(amount) || amount <= 0) {
+				alert("Please enter a valid amount");
+				return;
+			}
+			alert("UPI payment of Rs. " + amount + " has been sent to " + upiId);
+			window.location.href = "thankyou.html";
+		}
+	</script>
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("payment option background.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        #upi-id {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #password {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .upi-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+		.error {
+            color: red;
+			margin-top: 10px;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="upi-form">
+            <form id="payment-form">
+                <label for="upi-id">UPI ID:</label>
+                <input type="text" id="upi-id" name="upi-id" placeholder="Enter your UPI ID">
+                <p id="upi-id-error" class="error"></p>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <p id="password-error" class="error"></p>
+                <button type="button" id="submit-button" disabled>Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // get the UPI ID input element and submit button element
+        var upiIdInput = document.getElementById("upi-id");
+        var passwordInput = document.getElementById("password");
+        var submitButton = document.getElementById("submit-button");
+
+        // add event listener to the UPI ID input to check for valid input
+        upiIdInput.addEventListener("input", function() {
+            // get the input value
+            var upiId = upiIdInput.value;
+
+            // check if the input is a valid UPI ID
+            if (/^\w+@\w+$/.test(upiId)) {
+                // enable the submit button
+                submitButton.disabled = false;
+                // clear the error message
+                document.getElementById("upi-id-error").textContent = "";
+            } else {
+                // disable the submit button
+                submitButton.disabled = true;
+                // show an error message
+                document.getElementById("upi-id-error").textContent = "Please enter a valid UPI ID.";
+            }
+        });
+
+        // add event listener to the password input to check for valid input
+        passwordInput.addEventListener("input", function() {
+            // get the input value
+            var password = passwordInput.value;
+
+            // check if the input is a valid password
+            if (/^\d{4}$/.test(password)) {
+                // enable the submit button
+                submitButton.disabled = false;
+                // clear the error message
+                document.getElementById("password-error").textContent = "";
+            } else {
+                // disable the submit button
+                submitButton.disabled = true;
+                // show an error message
+                document.getElementById("password-error").textContent = "Please enter a valid 4-digit password.";
+            }
+        });
+
+        // add event listener to the submit button
+        submitButton.addEventListener("click", function() {
+            // redirect to the new page
+            window.location.href = "upiPayment2.html";
+        });
+    </script>
+</body>
+</html>

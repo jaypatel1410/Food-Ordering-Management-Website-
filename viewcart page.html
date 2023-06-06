@@ -1,0 +1,418 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+	 <title>View Cart</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+		body {
+			background-image: url("background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>View Cart</h1>
+	<div id="cartItems">
+		Cart items will be dynamically generated here 
+	</div>
+	<button onclick="clearCart()">Clear Cart</button>
+	<button onclick="showCart()">Show Cart</button>
+	<a href="menu.html"><button>Back to Menu</button></a>
+
+	<script src="script.js"></script>
+    <title>View Cart</title>
+	<link rel="stylesheet" type="text/css" href="viewcart2.html">
+	<style>
+		body {
+			background-image: url("Menu Background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
+		<script>
+            var cart = []; // array to store cart items
+		
+		function addToCart(itemName, itemPrice) {
+			var item = { name: itemName, price: itemPrice };
+			cart.push(item);
+			alert(itemName + " added to cart!");
+		}
+		
+		function removeFromCart(itemName) {
+			for (var i = 0; i < cart.length; i++) {
+				if (cart[i].name === itemName) {
+					cart.splice(i, 1);
+					break;
+				}
+			}
+			showCart();
+			alert(itemName + " removed from cart!");
+		}
+
+
+        function showCart() {
+			
+			var cartItems = "";
+			var total = 0;
+			for (var i = 0; i < cart.length; i++) {
+				cartItems += cart[i].name + " - ₹" + cart[i].price + "<br>";
+				total += parseInt(cart[i].price);
+			}
+			if (cartItems == "") {
+				cartItems = "Your cart is empty.";
+			} else {
+				cartItems += "<br>Total: ₹" + total;
+			}
+			document.getElementById("cartItems").innerHTML = cartItems;
+        }
+
+	function clearCart() {
+		cart = [];
+		showCart();
+	}
+</script>
+</head>
+<body>
+    <div style="text-align:center" >
+	<h1>Your Cart</h1>
+	<div id="cartItems"></div>
+    <button onclick="clearCart()">Clear Cart</button>
+	<button onclick="showCart()">Show Cart</button>
+	<a href="addtocart.html"><button>Back to Menu</button></a>
+    </div>
+    <br>
+	<div style="text-align:center" >
+		<a href="payment.html"><button>Payment</button></a> 
+	</div>
+</body>
+</html>
+
+
+ var cart = [];  array to store selected items
+
+        function addToCart(itemName, itemPrice) {
+            var item = { name: itemName, price: itemPrice };
+            cart.push(item);
+            alert(itemName + " added to cart!");
+        }
+
+        function removeFromCart(itemName) {
+            for (var i = 0; i < cart.length; i++) {
+                if (cart[i].name === itemName) {
+                    cart.splice(i, 1);
+                    break;
+                }
+            }
+            showCart();
+            alert(itemName + " removed from cart!");
+        }
+
+        function showCart() {
+            var cartItems = "";
+            var total = 0;
+            for (var i = 0; i < cart.length; i++) {
+                cartItems += cart[i].name + " - ₹" + cart[i].price + "<br>";
+                total += parseInt(cart[i].price);
+            }
+            if (cartItems == "") {
+                cartItems = "Your cart is empty.";
+            } else {
+                cartItems += "<br>Total: ₹" + total;
+            }
+            document.getElementById("cartItems").innerHTML = cartItems;
+        }
+
+        function clearCart() {
+            cart = [];
+            showCart();
+        }  
+-->
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Cart</title>
+	<link rel="stylesheet" type="text/css" href="style 2.css">
+	<style>
+		body {
+			background-image: url("Menu Background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
+    <script>
+        function showCart() {
+			
+			var cartItems = "";
+			var total = 0;
+			for (var i = 0; i < cart.length; i++) {
+				cartItems += cart[i].name + " - ₹" + cart[i].price + "<br>";
+				total += parseInt(cart[i].price);
+			}
+			if (cartItems == "") {
+				cartItems = "Your cart is empty.";
+			} else {
+				cartItems += "<br>Total: ₹" + total;
+			}
+			document.getElementById("cartItems").innerHTML = cartItems;
+		}
+
+        function clearCart() {
+    cart = [];
+    showCart();
+}
+    </script>
+</head>
+<body>
+    <div style="text-align:center">
+        <h1>Your Cart</h1>
+        <div id="cartItems"></div>
+        <button onclick="clearCart()">Clear Cart</button>
+        <button onclick="showCart()">Show Cart</button>
+        <a href="addtocart.html"><button>Back to Menu</button></a>
+    <br><br><br>
+	<div style="text-align:center">
+		<a href="payment.html"><button>Payment</button></a>
+	</div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+    <link rel="stylesheet" type="text/css" href="style 2.css">
+    <!-- <style>
+        body {
+            background-image: url("Menu Background.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        table {
+            
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center; /* Center the content within table cells */
+            border-bottom: 1px solid #ddd;
+        }
+    </style> -->
+    <style>
+        body {
+            background-image: url("viewcart background.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            width: 75%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: rgba(233, 178, 58, 0.9); /*RGB values with an alpha value of 0.9 */
+            box-shadow: 10 1px 1px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        th {
+            padding: 15px;
+            text-align: center;
+            background-color: #eba31f;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-top: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            border-left: 1px solid #000000;
+            border-right: 1px solid #000000;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ebd19d;
+            border-top: 1px solid #482d00;
+            border-bottom: 1px solid #482d00;
+            border-left: 1px solid #482d00;
+            border-right: 1px solid #482d00;
+        }
+
+        td:last-child {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #e0bc66;
+            
+        }
+
+        button {
+            padding: 8px 12px;
+            background-color: #ff0000;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        /* button:hover {
+            background-color: #c68b3e;
+        } */
+
+        a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #666;
+        }
+
+        .empty-cart-msg {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            font-size: 18px;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cartItems"></tbody>
+    </table>
+    
+    <br>
+    <div style="text-align:center" >
+        <button onclick="clearCart()">Clear Cart</button>
+        <a href="addtocart.html"><button>Back to Menu</button></a>
+    </div>
+    <script>
+        showCart(); // Show the cart items when the page loads
+
+        /*
+        function showCart() {
+            var cartItems = getCartItemsFromStorage();
+            var total = 0;
+            var cartItemsHTML = "";
+
+            if (cartItems.length === 0) {
+                cartItemsHTML = "<tr><td colspan='3'>Your cart is empty.</td></tr>";
+            } else {
+                cartItemsHTML = cartItems.map(function (item) {
+                    total += parseInt(item.price); // Parse the price as an integer
+                    return "<tr><td>" + item.name + "</td><td>₹" + item.price + "</td><td><button onclick='removeFromCart(\"" + item.name + "\")'>Remove</button></td></tr>";
+                }).join("");
+
+                cartItemsHTML += "<tr><td colspan='2'>Total:</td><td>₹" + total + "</td></tr>";
+            }
+
+            document.getElementById("cartItems").innerHTML = cartItemsHTML;
+        }*/
+
+        function showCart() {
+            var cartItems = getCartItemsFromStorage();
+            var total = 0;
+            var cartItemsHTML = "";
+
+            if (cartItems.length === 0) {
+                cartItemsHTML = "<tr><td colspan='3'>Your cart is empty.</td></tr>";
+            } else {
+                cartItemsHTML = cartItems.map(function (item) {
+                    total += parseInt(item.price); // Parse the price as an integer
+                    return "<tr><td>" + item.name + "</td><td>₹" + item.price + "</td><td><button onclick='removeFromCart(\"" + item.name + "\")'>Remove</button></td></tr>";
+                }).join("");
+
+                cartItemsHTML += "<tr><td colspan='2'>Total:</td><td class='total-cell'>₹" + total + "</td></tr>";
+            }
+
+            document.getElementById("cartItems").innerHTML = cartItemsHTML;
+        }
+
+        function removeFromCart(itemName) {
+            var confirmation = confirm("Are you sure you want to remove '" + itemName + "' from the cart?");
+            if (confirmation) {
+                var cartItems = getCartItemsFromStorage();
+                for (var i = 0; i < cartItems.length; i++) {
+                    if (cartItems[i].name === itemName) {
+                        cartItems.splice(i, 1);
+                        break;
+                    }
+                }
+                localStorage.setItem("cartItems", JSON.stringify(cartItems));
+                showCart(); // Refresh the cart display
+                // alert(itemName + " removed from cart!");
+            }
+        }
+
+        // function clearCart() {
+        //     localStorage.removeItem("cartItems");
+        //     showCart(); // Refresh the cart display
+        //     alert("Cart cleared!");
+        // }
+        function clearCart() {
+            var confirmation = confirm("Are you sure you want to clear the cart?");
+            if (confirmation) {
+                localStorage.removeItem("cartItems");
+                showCart(); // Refresh the cart display
+                alert("Cart cleared!");
+            }
+        }
+
+        function getCartItemsFromStorage() {
+            var cartItemsJSON = localStorage.getItem("cartItems");
+            return cartItemsJSON ? JSON.parse(cartItemsJSON) : [];
+        }
+
+        function addToCart(itemName, itemPrice) {
+            var cartItems = getCartItemsFromStorage();
+            var item = { name: itemName, price: itemPrice };
+            cartItems.push(item);
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+            alert(itemName + " added to cart!");
+        }
+
+        function removeFromMenu(itemName) {
+            var menuItems = getMenuItemsFromStorage();
+            for (var i = 0; i < menuItems.length; i++) {
+                if (menuItems[i].name === itemName) {
+                    menuItems.splice(i, 1);
+                    break;
+                }
+            }
+            localStorage.setItem("menuItems", JSON.stringify(menuItems));
+        }
+
+        function clearCartItemsInStorage() {
+            localStorage.removeItem("cartItems");
+        }
+    </script>
+
+<br><br><br>
+<div style="text-align:center">
+    <a href="payment.html"><button class="payment-button" onclick="return confirmCheckout()">Proceed to Checkout</button></a>
+</div>
+</body>
+</html>

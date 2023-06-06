@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Restaurant Menu</title>
+	<link rel="stylesheet" type="text/css" href="style 2.css">
+	<style>
+		body {
+			background-image: url("Menu Background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+	</style>
+<script src="script.js"></script>
+</head>
+<body>
+	<h1>Menu</h1>
+	<div class="menu-container">
+		<div class="menu-item">
+			<img src="burger.jpg" alt="Burger">
+			<h2>Burger</h2>
+			<p>A soft potato patty topped with cheese, lettuce, tomato, and onion on a sesame seed bun.</p>
+			<p class="price">₹90</p>
+			<button onclick="addToCart('Burger', '90')">Add to Cart</button>
+			<button onclick="removeFromCart('Burger')">Remove from Cart</button>
+		</div>
+
+		<div class="menu-item">
+			<img src="pizza.jpg" alt="Pizza">
+			<h2>Pizza</h2>
+			<p>A delicious pizza with your choice of toppings, including pepperoni, sausage, mushrooms, and more.</p>
+			<p class="price">₹270</p>
+			<button onclick="addToCart('Pizza', '270')">Add to Cart</button>
+			<button onclick="removeFromCart('Pizza')">Remove from Cart</button>
+		</div>
+
+		<div class="menu-item">
+			<img src="salad.jpg" alt="Salad">
+			<h2>Salad</h2>
+			<p>A fresh salad with mixed greens, tomatoes, cucumbers, and your choice of dressing.</p>
+			<p class="price">₹190</p>
+			<button onclick="addToCart('Salad', '190')">Add to Cart</button>
+			<button onclick="removeFromCart('Salad')">Remove from Cart</button>
+		</div>
+
+		<div class="menu-item">
+			<img src="khichdi.jpg" alt="Khichdi">
+			<h2>Khichdi</h2>
+			<p>An exotic Indian dish merinated with spices and the dice of papprica.</p>
+			<p class="price">₹49</p>
+			<button onclick="addToCart('Khichdi', '49')">Add to Cart</button>
+			<button onclick="removeFromCart('Khichdi')">Remove from Cart</button>
+		</div>
+
+		<div class="menu-item">
+			<img src="Vegetable Rolls.jpg" alt="Vegetable Rolls">
+			<h2>Vegetable Rolls</h2>
+			<p>wheat dough, filled with a shredded mixture of vegetables, served fresh or deep-fried.</p>
+			<p class="price">₹170</p>
+			<button onclick="addToCart('Vegetable Rolls', '170')">Add to Cart</button>
+			<button onclick="removeFromCart('Vegetable Rolls')">Remove from Cart</button>
+		</div>
+	</div>
+	
+	<div id="cart" style="text-align:center" >
+		<!-- <button onclick="showCart()">View Cart</button> -->
+		<a href="viewcart page.html"><button>View Cart</button></a>
+	</div>
+	<!-- <br>
+	<div style="text-align:center" >
+		<a href="payment.html"><button>Payment</button></a>
+	</div> -->
+</body>
+</html>

@@ -1,0 +1,95 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f2f2f2;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+.menu-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	margin: 50px auto;
+	max-width: 800px;
+}
+
+.menu-item {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	padding: 20px;
+	margin: 20px;
+	flex-basis: 300px;
+}
+
+.menu-item img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 5px;
+	margin-bottom: 10px;
+}
+
+.menu-item h2 {
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+
+.menu-item p {
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.price {
+	font-size: 20px;
+	font-weight: bold;
+	color: #ff0000;
+	margin-bottom: 10px;
+}
+
+button {
+	background-color: #ff0000;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover {
+	background-color: #d90000;
+}
+
+.payment-button {
+    padding: 8px 12px;
+    background-color: #ff0000;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 20px;
+    text-transform: uppercase;
+    /* Add additional styles to make it different */
+    /* For example: */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.total-cell {
+    font-weight: bold;
+    background-color: #eba31f;
+    color: #333;
+	font-size: 27px;
+}
+
+.total-row {
+    font-weight: bold;
+}
+
+.button[type="submit"] {
+	margin: auto;
+}

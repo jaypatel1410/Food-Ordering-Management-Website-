@@ -1,0 +1,330 @@
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("payment option background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.card-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 10px;
+		}
+		input[type=text], input[type=password] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 10px;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		button {
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 18px;
+			transition: background-color 0.3s ease;
+		}
+		button:hover {
+			background-color: #3E8E41;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="card-form">
+			<form action="CardPayment2.html">
+				<label for="card-number">Card Number:</label>
+				<input type="text" id="card-number" name="card-number" placeholder="Enter your card number">
+				<label for="password">Password:</label>
+				<input type="password" id="password" name="password" placeholder="Enter your password">
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+-->
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-image: url("payment option background.jpg");
+			background-size: cover;
+			background-position: center;
+		}
+
+		label {
+			font-weight: bold;
+			font-size: 22px;
+		}
+
+		#card-number {
+			font-weight: bold;
+			margin-top: 10px;
+		}
+
+		#OTP {
+			font-weight: bold;
+			margin-top: 10px;
+		}
+
+		.button[type="submit"] {
+			margin: auto;
+		}
+
+		.container {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		.card-form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+			padding: 40px;
+			background-color: rgba(255, 255, 255, 0.5);
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+		}
+		input[type=text], input[type=password] {
+			padding: 15px;
+			border-radius: 5px;
+			border: none;
+			margin-bottom: 15px;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: 18px;
+		}
+		button {
+			padding: 15px 30px;
+			background-color: #4CAF50;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 20px;
+			transition: background-color 0.3s ease;
+		}
+		button:hover {
+			background-color: #3E8E41;
+		}
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="card-form">
+			<form id="payment-form">
+				<label for="card-number">Card Number:</label>
+				<input type="text" id="card-number" name="card-number" placeholder="Enter your card number">
+				<p id="card-number-error" class="error"></p>
+				<label for="OTP">OTP:</label>
+				<input type="password" id="OTP" name="OTP" placeholder="Enter your PIN">
+				<p id="OTP-error" class="error"></p>
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+	</div>
+	<script>
+		const paymentForm = document.getElementById("payment-form");
+		const cardNumberInput = document.getElementById("card-number");
+		const pinInput = document.getElementById("OTP");
+		const cardNumberError = document.getElementById("card-number-error");
+		const pinError = document.getElementById("OTP-error");
+
+		function validateCardNumber() {
+			if (cardNumberInput.value.length !== 12 || isNaN(cardNumberInput.value)) {
+				cardNumberError.textContent = "Please enter a valid 12 digit card number.";
+				return false;
+			}
+			return true;
+		}
+
+		function validatePin() {
+			if (pinInput.value.length !== 6 || isNaN(pinInput.value)) {
+				pinError.textContent = "Please verify your 6 digit OTP.";
+				return false;
+			}
+			return true;
+		}
+
+		paymentForm.addEventListener("submit", (event) => {
+			event.preventDefault();
+			cardNumberError.textContent = "";
+			pinError.textContent = "";
+			if (validateCardNumber() && validatePin()) {
+				window.location.href = "CardPayment2.html";
+			}
+		});
+	</script>
+</body>
+</html>
+
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-image: url("payment option background.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        #card-number {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #OTP {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .button[type="submit"] {
+            margin: auto;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type=text],
+        input[type=password] {
+            padding: 15px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 15px;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 18px;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3E8E41;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card-form">
+            <form id="payment-form">
+                <label for="card-number">Card Number:</label>
+                <input type="text" id="card-number" name="card-number" placeholder="Enter your card number">
+                <p id="card-number-error" class="error"></p>
+                <label for="OTP">OTP:</label>
+                <input type="password" id="OTP" name="OTP" placeholder="Enter your PIN">
+                <p id="OTP-error" class="error"></p>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        const cardNumberInput = document.getElementById("card-number");
+        const pinInput = document.getElementById("OTP");
+        const cardNumberError = document.getElementById("card-number-error");
+        const pinError = document.getElementById("OTP-error");
+
+        function validateCardNumber() {
+            if (cardNumberInput.value.length !== 12 || isNaN(cardNumberInput.value)) {
+                cardNumberError.textContent = "Please enter a valid 12-digit card number.";
+                return false;
+            }
+            return true;
+        }
+
+        function validatePin() {
+            if (pinInput.value.length !== 6 || isNaN(pinInput.value)) {
+                pinError.textContent = "Please enter a valid 6-digit OTP.";
+                return false;
+            }
+            return true;
+        }
+
+        cardNumberInput.addEventListener("input", function () {
+            if (validateCardNumber()) {
+                cardNumberError.textContent = "";
+            }
+        });
+
+        pinInput.addEventListener("input", function () {
+            if (validatePin()) {
+                pinError.textContent = "";
+            }
+        });
+
+        document.getElementById("payment-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            if (validateCardNumber() && validatePin()) {
+                window.location.href = "CardPayment2.html";
+            }
+        });
+    </script>
+</body>
+</html>

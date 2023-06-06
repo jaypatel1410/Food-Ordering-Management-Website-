@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment Options</title>
+	<style>
+		body {
+			background-image: url('Final Background for Payment.jpg');
+			background-size: cover;
+			font-family: Arial, sans-serif;
+			text-align: center;
+		}
+		h1 {
+			color: #333;
+			margin-top: 50px;
+		}
+		button {
+			background-color: #ff99334e;
+			border: none;
+			color: white;
+			padding: 20px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			font-size: 16px;
+			margin: 20px;
+			cursor: pointer;
+			border-radius: 5px;
+			transition: all 0.3s ease-in-out;
+		}
+		button:hover {
+			background-color: #ff9933c0;
+		}
+		#upiButton {
+			background-color: #ff993339;
+		}
+		#upiButton:hover {
+			background-color: #ff9933c0;
+		}
+		button img {
+			height: 180px;
+			margin-bottom: 10px;
+		}
+		button span {
+			color: rgba(0, 0, 0, 0.838);
+		}
+	</style>
+</head>
+<body>
+	<h1>Select Payment Option</h1>
+	<br>
+	<br>
+	<br>
+	<div>
+		<a href="Cashpayment.html"><button id="cashButton">
+			<img src="cash.jpg" alt="cash">
+			<span>Cash</span>
+		</button></a>
+		<a href="CardPayment.html"><button id="cardButton">
+			<img src="card.jpg" alt="card">
+			<span>Card</span>
+		</button></a>
+		<a href="upiPayment.html"><button id="upiButton">
+			<img src="upi.jpg" alt="upi">
+			<span>UPI</span>
+		</button></a>
+	</div>
+</body>
+</html>
